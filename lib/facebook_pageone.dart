@@ -60,7 +60,7 @@ class FacebookUI extends StatelessWidget {
           child: Padding(
             padding: EdgeInsets.all(10.0),
             child: Container(
-              width: 320.0,
+              width: 300.0,
               child:Row(
                 children: [
                   Icon( Icons.search, ),
@@ -118,7 +118,7 @@ class FacebookUI extends StatelessWidget {
           ),
         ),
           SizedBox(
-            width: 350,
+            width: 300,
           ),
 
           Positioned(
@@ -291,6 +291,7 @@ class FacebookUI extends StatelessWidget {
                           image: DecorationImage(
                             image: AssetImage("assets/images/u.jpg"),
                             fit: BoxFit.cover,
+
                           ),
                           borderRadius: BorderRadius.circular(15),
                         ),
