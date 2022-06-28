@@ -69,7 +69,7 @@ class PostWidget extends StatelessWidget {
             ),
             subtitle: Row(
               children: [
-                Text("3 minutes ago"),
+                Text(post.time??''),
                 SizedBox(
                   width: 10,
                 ),

@@ -10,9 +10,11 @@ class FacebookUI extends StatelessWidget {
     // TODO: implement build
     return Scaffold(
 
-        body:SingleChildScrollView(
+        body:ListView(
+          scrollDirection: Axis.vertical,
 
-        child: Padding(
+
+          children: [Padding(
             padding: const EdgeInsets.only(bottom: 10),
              child: Column(
              crossAxisAlignment: CrossAxisAlignment.start,
@@ -58,7 +60,7 @@ class FacebookUI extends StatelessWidget {
 
             color: Color(0xFFE0E0E0),
           ),
-          
+
           child: Padding(
             padding: EdgeInsets.all(10.0),
             child: Container(
@@ -415,86 +417,23 @@ class FacebookUI extends StatelessWidget {
                   thickness: 10,
                   color: Colors.white,
                 ),
+              Column(children: [
+                Container(
+                  height: 400,
+                  child: ListView.builder(
 
-                Column(children:
-                posts.map((e) {
-                  return PostWidget(e.user!, e.post!);
+                      itemCount: posts.length,
+                      itemBuilder: ( context,  index) {
+                        return PostWidget(posts[index].user!, posts[index].post!);
+                      }
 
-
-                }
-                ).toList()
+                  ),
                 ),
+
+
 
 
 /////////
-                ListTile(
-                  leading:Stack(
-                    children: [
-                      Container(
-                        decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                          border:Border(),
-                        ),
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.circular(100),
-                          child: Image.asset(
-                            "assets/images/u.jpg",
-                            fit: BoxFit.cover,
-                            width: 50,
-                            height: 50,
-                          ),
-                        ),
-                      ),
-
-                      SizedBox()
-                      // statusIndicator,
-                    ],
-                  ),
-
-
-                  title: Row(
-                    children: [
-                      Text(
-                        "Ahmed",
-                        style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold),
-
-                      ),
-
-                      Text(
-                        " had a flutter course ",
-                        style: TextStyle(color: Colors.black,fontWeight: FontWeight.w500),
-
-                      ),
-
-                      Text(
-                        "at ",
-                        style: TextStyle(color: Colors.black,fontWeight: FontWeight.w500),
-
-                      ),
-                      Text(
-                        "Gaza Sky Geeks",
-                        style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold),
-
-                      ),
-                      SizedBox(width: 10),
-
-                    ],
-                  ),
-                  subtitle: Row(
-                    children: [
-                      Text("1 month ago"),
-                      SizedBox(
-                        width: 10,
-                      ),
-                      Icon(
-                        Icons.public,
-                        color: Colors.grey[700],
-                        size: 15,
-                      )
-                    ],
-                  ),
-
-                ),
 
 
 
@@ -514,7 +453,7 @@ class FacebookUI extends StatelessWidget {
         ),
 
 
-
+        ],
     ),
     floatingActionButton: FloatingActionButton(
       onPressed: () {},

@@ -34,22 +34,7 @@ List<Map<String, dynamic>> postsResponse = [
       'noComments': "30",
     }
   },
-  {
-    'user': {
-      'name': 'hashem',
-      'image':
-      'https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80'
-    },
-    'post': {
-      'time':'15 minutes ago',
 
-      'content': "i love programming",
-      'image':
-      'https://images.unsplash.com/photo-1505144808419-1957a94ca61e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=326&q=80',
-      'noLikes': "40",
-      'noComments': "40",
-    }
-  },
   {
     'user': {
       'name': 'farah',
