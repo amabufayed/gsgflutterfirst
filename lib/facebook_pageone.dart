@@ -9,141 +9,122 @@ class FacebookUI extends StatelessWidget {
   Widget build(BuildContext context) {
     // TODO: implement build
     return Scaffold(
-
-        body:ListView(
-          scrollDirection: Axis.vertical,
-
-
-          children: [Padding(
+      body: ListView(
+        scrollDirection: Axis.vertical,
+        children: [
+          Padding(
             padding: const EdgeInsets.only(bottom: 10),
-             child: Column(
-             crossAxisAlignment: CrossAxisAlignment.start,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
-             Padding(
-             padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 15),
-    child: Column(
-    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-    children: <Widget>[
-
-    Row(
-    children: <Widget>[
-      SizedBox(
-        width:30,
-      ),
-    Container(
-    width: 30,
-    height: 30,
-
-    decoration: BoxDecoration(
-
-    image: DecorationImage(
-
-    image: AssetImage("assets/icons/camera.png"), fit: BoxFit.contain, ),
-   ),
-    ),
-      SizedBox(
-        width:20,
-      ),
-      Padding(
-        padding: EdgeInsets.fromLTRB(10,0,0,0),
-
-      child: InkWell(
-        splashColor: Colors.transparent,
-        highlightColor: Colors.transparent,
-
-
-        child: DecoratedBox(
-          decoration: BoxDecoration(
-            shape: BoxShape.rectangle,
-            border: Border.all(width: 0.5, color: Colors.grey),
-            borderRadius: BorderRadius.circular(50),
-
-            color: Color(0xFFE0E0E0),
-          ),
-
-          child: Padding(
-            padding: EdgeInsets.all(10.0),
-            child: Container(
-              width: 300.0,
-              child:Row(
-                children: [
-                  Icon( Icons.search, ),
-                  Text(" Search", style:TextStyle(color:Color.fromRGBO(54, 69, 79, 0.5) ) ,)
-
-
-
-
-
-                ],
-              ),
-
-
-            ),
-          ),
-        ),
-      ),
-      ),
-      SizedBox(
-        width:30,
-      ),
-      Container(
-        width: 30,
-        height: 30,
-
-        decoration: BoxDecoration(
-
-          image: DecorationImage(
-
-            image: AssetImage("assets/icons/messenger.png"), fit: BoxFit.contain, ),
-        ),
-      ),
-
-
-    ],
-        ),
-      Divider(
-        height:30,
-        color: Colors.white,
-
-      ),
-      Row(
-
-
-        children:[ Positioned(
-          top: 50,
-          child: Text(
-            "Stories",
-            style: TextStyle(
-              color: Colors.black,
-              fontSize: 20,
-              fontWeight: FontWeight.bold,
-
-            ),
-          ),
-        ),
-          SizedBox(
-            width: 300,
-          ),
-
-          Positioned(
-          top: 50,
-          child: Text(
-            " See Archive >",
-            style: TextStyle(
-              color: Colors.black,
-              fontSize: 16,
-              fontWeight: FontWeight.w500,
-
-            ),
-          ),
-        ),
-
-
-        ]
-      )]
-    )
-               ,
-             ),
+                Padding(
+                  padding:
+                      const EdgeInsets.symmetric(vertical: 10, horizontal: 15),
+                  child: Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: <Widget>[
+                        Row(
+                          children: <Widget>[
+                            SizedBox(
+                              width: 30,
+                            ),
+                            Container(
+                              width: 30,
+                              height: 30,
+                              decoration: BoxDecoration(
+                                image: DecorationImage(
+                                  image: AssetImage("assets/icons/camera.png"),
+                                  fit: BoxFit.contain,
+                                ),
+                              ),
+                            ),
+                            SizedBox(
+                              width: 20,
+                            ),
+                            Padding(
+                              padding: EdgeInsets.fromLTRB(10, 0, 0, 0),
+                              child: InkWell(
+                                splashColor: Colors.transparent,
+                                highlightColor: Colors.transparent,
+                                child: DecoratedBox(
+                                  decoration: BoxDecoration(
+                                    shape: BoxShape.rectangle,
+                                    border: Border.all(
+                                        width: 0.5, color: Colors.grey),
+                                    borderRadius: BorderRadius.circular(50),
+                                    color: Color(0xFFE0E0E0),
+                                  ),
+                                  child: Padding(
+                                    padding: EdgeInsets.all(10.0),
+                                    child: Container(
+                                      width: 300.0,
+                                      child: Row(
+                                        children: [
+                                          Icon(
+                                            Icons.search,
+                                          ),
+                                          Text(
+                                            " Search",
+                                            style: TextStyle(
+                                                color: Color.fromRGBO(
+                                                    54, 69, 79, 0.5)),
+                                          )
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                            SizedBox(
+                              width: 30,
+                            ),
+                            Container(
+                              width: 30,
+                              height: 30,
+                              decoration: BoxDecoration(
+                                image: DecorationImage(
+                                  image:
+                                      AssetImage("assets/icons/messenger.png"),
+                                  fit: BoxFit.contain,
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                        Divider(
+                          height: 30,
+                          color: Colors.white,
+                        ),
+                        Row(children: [
+                          Positioned(
+                            top: 50,
+                            child: Text(
+                              "Stories",
+                              style: TextStyle(
+                                color: Colors.black,
+                                fontSize: 20,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ),
+                          SizedBox(
+                            width: 300,
+                          ),
+                          Positioned(
+                            top: 50,
+                            child: Text(
+                              " See Archive >",
+                              style: TextStyle(
+                                color: Colors.black,
+                                fontSize: 16,
+                                fontWeight: FontWeight.w500,
+                              ),
+                            ),
+                          ),
+                        ])
+                      ]),
+                ),
                 Container(
                   height: 250,
                   child: ListView(
@@ -169,55 +150,46 @@ class FacebookUI extends StatelessWidget {
                             Positioned(
                                 left: 5,
                                 top: 5,
-                                child:Container(
+                                child: Container(
                                   margin: EdgeInsets.all(5),
-                                  decoration:
-                                  BoxDecoration(color: Colors.grey[300], shape: BoxShape.circle),
+                                  decoration: BoxDecoration(
+                                      color: Colors.grey[300],
+                                      shape: BoxShape.circle),
                                   child: IconButton(
                                     icon: Icon(
                                       Icons.add,
                                       color: Colors.green,
                                     ),
-                                    onPressed:() {},
+                                    onPressed: () {},
                                   ),
-                                )
-
-
-
-                            ),
+                                )),
                             Positioned(
                                 bottom: 10,
                                 left: 10,
-                                child: Text("Add to story",
-
+                                child: Text(
+                                  "Add to story",
                                   style: TextStyle(
                                     color: Colors.white,
                                     fontSize: 14,
                                     fontWeight: FontWeight.w500,
                                   ),
-                                )
-                            ),
+                                )),
                             Positioned(
                                 left: 5,
                                 top: 5,
-                                child:Container(
+                                child: Container(
                                   margin: EdgeInsets.all(5),
-                                  decoration:
-                                  BoxDecoration(color: Colors.grey[300], shape: BoxShape.circle),
+                                  decoration: BoxDecoration(
+                                      color: Colors.grey[300],
+                                      shape: BoxShape.circle),
                                   child: IconButton(
                                     icon: Icon(
                                       Icons.add,
                                       color: Colors.green,
                                     ),
-                                    onPressed:() {},
+                                    onPressed: () {},
                                   ),
-                                )
-
-
-
-                            ),
-
-
+                                )),
                           ],
                         ),
                       ),
@@ -241,20 +213,21 @@ class FacebookUI extends StatelessWidget {
                             Positioned(
                                 left: 5,
                                 top: 5,
-                                child:Stack(
+                                child: Stack(
                                   children: [
                                     Container(
                                       decoration: BoxDecoration(
                                         shape: BoxShape.circle,
-                                        border:  Border.all(
+                                        border: Border.all(
                                           color: Colors.blueAccent,
                                           width: 3,
-                                        )
-                                        ,
+                                        ),
                                       ),
-                                      padding: EdgeInsets.only(right: 4, left: 4),
+                                      padding:
+                                          EdgeInsets.only(right: 4, left: 4),
                                       child: ClipRRect(
-                                        borderRadius: BorderRadius.circular(100),
+                                        borderRadius:
+                                            BorderRadius.circular(100),
                                         child: Image.asset(
                                           "assets/images/m.jpg",
                                           fit: BoxFit.cover,
@@ -266,24 +239,23 @@ class FacebookUI extends StatelessWidget {
                                     SizedBox()
                                     // statusIndicator,
                                   ],
-                                )
-
-                            ),
+                                )),
                             Positioned(
-                                bottom: 10,
-                                left: 10,
-                                child: Text(
-                                  "Ahmed Abufayed",
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.bold,
-                                  ),
+                              bottom: 10,
+                              left: 10,
+                              child: Text(
+                                "Ahmed Abufayed",
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.bold,
                                 ),
+                              ),
                             )
                           ],
                         ),
-                      ), Container(
+                      ),
+                      Container(
                         width: 150,
                         margin: EdgeInsets.only(
                           left: 10,
@@ -295,7 +267,6 @@ class FacebookUI extends StatelessWidget {
                           image: DecorationImage(
                             image: AssetImage("assets/images/u.jpg"),
                             fit: BoxFit.cover,
-
                           ),
                           borderRadius: BorderRadius.circular(15),
                         ),
@@ -304,20 +275,21 @@ class FacebookUI extends StatelessWidget {
                             Positioned(
                                 left: 5,
                                 top: 5,
-                                child:Stack(
+                                child: Stack(
                                   children: [
                                     Container(
                                       decoration: BoxDecoration(
                                         shape: BoxShape.circle,
-                                        border:  Border.all(
+                                        border: Border.all(
                                           color: Colors.blueAccent,
                                           width: 3,
-                                        )
-                                        ,
+                                        ),
                                       ),
-                                      padding: EdgeInsets.only(right: 4, left: 4),
+                                      padding:
+                                          EdgeInsets.only(right: 4, left: 4),
                                       child: ClipRRect(
-                                        borderRadius: BorderRadius.circular(100),
+                                        borderRadius:
+                                            BorderRadius.circular(100),
                                         child: Image.asset(
                                           "assets/images/u.jpg",
                                           fit: BoxFit.cover,
@@ -329,9 +301,7 @@ class FacebookUI extends StatelessWidget {
                                     SizedBox()
                                     // statusIndicator,
                                   ],
-                                )
-
-                            ),
+                                )),
                             Positioned(
                                 bottom: 10,
                                 left: 10,
@@ -366,20 +336,21 @@ class FacebookUI extends StatelessWidget {
                             Positioned(
                                 left: 5,
                                 top: 5,
-                                child:Stack(
+                                child: Stack(
                                   children: [
                                     Container(
                                       decoration: BoxDecoration(
                                         shape: BoxShape.circle,
-                                        border:  Border.all(
+                                        border: Border.all(
                                           color: Colors.blueAccent,
                                           width: 3,
-                                        )
-                                        ,
+                                        ),
                                       ),
-                                      padding: EdgeInsets.only(right: 4, left: 4),
+                                      padding:
+                                          EdgeInsets.only(right: 4, left: 4),
                                       child: ClipRRect(
-                                        borderRadius: BorderRadius.circular(100),
+                                        borderRadius:
+                                            BorderRadius.circular(100),
                                         child: Image.asset(
                                           "assets/images/u.jpg",
                                           fit: BoxFit.cover,
@@ -391,9 +362,7 @@ class FacebookUI extends StatelessWidget {
                                     SizedBox()
                                     // statusIndicator,
                                   ],
-                                )
-
-                            ),
+                                )),
                             Positioned(
                                 bottom: 10,
                                 left: 10,
@@ -408,8 +377,6 @@ class FacebookUI extends StatelessWidget {
                           ],
                         ),
                       )
-
-
                     ],
                   ),
                 ),
@@ -417,47 +384,28 @@ class FacebookUI extends StatelessWidget {
                   thickness: 10,
                   color: Colors.white,
                 ),
-              Column(children: [
-                Container(
-                  height: 400,
-                  child: ListView.builder(
-
-                      itemCount: posts.length,
-                      itemBuilder: ( context,  index) {
-                        return PostWidget(posts[index].user!, posts[index].post!);
-                      }
-
-                  ),
+                Column(
+                  children: [
+                    Container(
+                      height: 400,
+                      child: ListView.builder(
+                          itemCount: posts.length,
+                          itemBuilder: (context, index) {
+                            return PostWidget(
+                                posts[index].user!, posts[index].post!);
+                          }),
+                    ),
+                  ],
                 ),
-
-
-
-
-/////////
-
-
-
-
-
-
-
-
-
-
-
-
               ],
-
-             )
-          ,
-        ),
-
-
+            ),
+          ),
         ],
-    ),
-    floatingActionButton: FloatingActionButton(
-      onPressed: () {},
-      child: const Icon(Icons.add),
-    ),    );
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        child: const Icon(Icons.add),
+      ),
+    );
   }
 }
