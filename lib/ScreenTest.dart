@@ -12,7 +12,8 @@ class ScreenTest extends StatefulWidget {
   }
 }
 class ScreenTestState extends State<ScreenTest>{
-  String content = "";
+  String content = 'Home Page';
+
   String title ="";
   int index=0;
 
