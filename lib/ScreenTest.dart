@@ -24,7 +24,10 @@ class ScreenTestState extends State<ScreenTest>{
   Widget build(BuildContext context) {
 
     // TODO: implement build
-    return  Scaffold(
+    return DefaultTabController(
+        length: 3,
+        child:
+        Scaffold(
 
 
       appBar: AppBar(
@@ -37,6 +40,15 @@ class ScreenTestState extends State<ScreenTest>{
               }),
 
         ],
+        bottom: TabBar(
+          tabs: [
+            Icon(Icons.home),
+            Icon(Icons.favorite),
+            Icon(Icons.person),
+          ],
+        ),
+
+
       ),
 
       drawer: Drawer(
@@ -90,12 +102,22 @@ class ScreenTestState extends State<ScreenTest>{
 
       ),
 
-      body:Container(
+      body:TabBarView(
+        children: [
+          Text("Home Page"),
+          Text("Favourite Page"),
+          Text("Profile Page"),
 
-        height: MediaQuery.of(context).size.height/9,
-        width: 300,
-        child: Center(child: Text(content)),
+        ],
       ),
+
+
+      // Container(
+      //
+      //   height: MediaQuery.of(context).size.height/9,
+      //   width: 300,
+      //   child: Center(child: Text(content)),
+      // ),
       bottomNavigationBar: BottomNavigationBar(
 
           onTap: (i) {
@@ -120,7 +142,7 @@ class ScreenTestState extends State<ScreenTest>{
                 label: 'Profile', icon: Icon(Icons.perm_identity))
           ]),
 
-    );
+    ),);
 
 
 
