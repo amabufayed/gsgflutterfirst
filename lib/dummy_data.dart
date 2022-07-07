@@ -1,3 +1,5 @@
+import 'package:gsgflutterfirst/NewsModel.dart';
+import 'package:gsgflutterfirst/newsResponse.dart';
 import 'package:gsgflutterfirst/postResponse.dart';
 
 List<Map<String, dynamic>> postsResponse = [
@@ -70,3 +72,5 @@ List<Map<String, dynamic>> postsResponse = [
 ];
 
 List<PostResponse> posts =postsResponse.map((e) => PostResponse.fromJson(e)).toList();
+
+
