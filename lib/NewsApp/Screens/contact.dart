@@ -1,3 +1,6 @@
+// ignore_for_file: deprecated_member_use
+import 'package:share_plus/share_plus.dart';
+
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:gsgflutterfirst/NewsApp/Wedigets/news_widget.dart';
@@ -57,7 +60,24 @@ class Contact extends StatelessWidget {
               makeSms("0595305026");
 
             }, icon: Icon(Icons.sms)),
+            IconButton(onPressed: () async {
+              String fbProtocolUrl;
 
+                fbProtocolUrl = 'fb://page/page_id';
+
+
+              String fallbackUrl = 'https://www.facebook.com/ahmedmahabufayed';
+
+              try {
+                bool launched = await launch(fbProtocolUrl, forceSafariVC: false);
+
+                if (!launched) {
+                  await launch(fallbackUrl, forceSafariVC: false);
+                }
+              } catch (e) {
+                await launch(fallbackUrl, forceSafariVC: false);
+              }
+            }, icon: Icon(FontAwesomeIcons.facebook)),
 
 
 
