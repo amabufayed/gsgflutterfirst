@@ -42,6 +42,7 @@ dependencies:
   flutter_email_sender: ^5.1.0
   open_mail_app: ^0.4.5
   share_plus: ^4.0.10
+  easy_localization: ^3.0.1
 
 dev_dependencies:
   flutter_test:
@@ -80,6 +81,8 @@ flutter:
     - assets/icons/verify.png
     - assets/icons/camera.png
     - assets/icons/messenger.png
+    - assets/translations/
+
 
   #   - images/a_dot_ham.jpeg
 
