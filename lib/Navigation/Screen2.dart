@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 
 class Screen2 extends StatelessWidget{
+
+ String? title;
+  Screen2(this.title);
   @override
   Widget build(BuildContext context) {
     return WillPopScope(
@@ -15,7 +18,7 @@ class Screen2 extends StatelessWidget{
       },
       child: Scaffold(
         appBar: AppBar(
-          title: Text("Screen2"),
+          title: Text("$title"),
         ),
         body: Column(
           children: [

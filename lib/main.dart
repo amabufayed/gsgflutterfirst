@@ -2,10 +2,12 @@ import 'dart:developer';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:gsgflutterfirst/Navigation/PageNotFound.dart';
 import 'package:gsgflutterfirst/Navigation/Screen1.dart';
 import 'package:gsgflutterfirst/Navigation/Screen2.dart';
 import 'package:gsgflutterfirst/Navigation/Screen3.dart';
 import 'package:gsgflutterfirst/NewsApp/Screens/main_screen.dart';
+import 'package:gsgflutterfirst/trui.dart';
 import 'package:gsgflutterfirst/trui.dart';
 
 
@@ -49,9 +51,25 @@ class MyAppState extends State<MyApp> {
       home: Screen1(),
       routes: {
         'screen1':(context)=>Screen1(),
-        'screen2':(context)=>Screen2(),
+        'screen2':(context)=>Screen2('Screen2'),
         'screen3':(context)=>Screen3(),
+      },
+      onGenerateRoute: (RouteSettings routesetting){
+        String? name =routesetting.name;
+        dynamic arguments=routesetting.arguments;
+
+        if(name=='screen2'){
+          Navigator.push(context ,MaterialPageRoute(builder: (context){
+            return Screen2('Screen two');
+          }));
+        }
+        else{
+          Navigator.push(context ,MaterialPageRoute(builder: (context){
+            return PageNotFound();
+          }));
+        }
       },
     );
   }
 }
+
