@@ -7,6 +7,8 @@ import 'package:gsgflutterfirst/Navigation/Screen1.dart';
 import 'package:gsgflutterfirst/Navigation/Screen2.dart';
 import 'package:gsgflutterfirst/Navigation/Screen3.dart';
 import 'package:gsgflutterfirst/NewsApp/Screens/main_screen.dart';
+import 'package:gsgflutterfirst/Posts/Add_Post.dart';
+import 'package:gsgflutterfirst/Posts/PostsScreen.dart';
 import 'package:gsgflutterfirst/trui.dart';
 import 'package:gsgflutterfirst/trui.dart';
 
@@ -48,11 +50,12 @@ class MyAppState extends State<MyApp> {
       debugShowCheckedModeBanner: false,
       // theme: isDark ? ThemeData.dark() : ThemeData.light(),
       // home: MainScreen(),
-      home: Screen1(),
+      home: PostsScreen(),
       routes: {
         'screen1':(context)=>Screen1(),
         'screen2':(context)=>Screen2('Screen2'),
         'screen3':(context)=>Screen3(),
+        'addpost':(context)=>AddPost(),
       },
       onGenerateRoute: (RouteSettings routesetting){
         String? name =routesetting.name;

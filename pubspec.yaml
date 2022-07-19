@@ -43,6 +43,7 @@ dependencies:
   open_mail_app: ^0.4.5
   share_plus: ^4.0.10
   easy_localization: ^3.0.1
+  image_picker: ^0.8.5+3
 
 dev_dependencies:
   flutter_test:
