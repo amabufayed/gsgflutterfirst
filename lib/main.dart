@@ -9,6 +9,7 @@ import 'package:gsgflutterfirst/Navigation/Screen3.dart';
 import 'package:gsgflutterfirst/NewsApp/Screens/main_screen.dart';
 import 'package:gsgflutterfirst/Posts/Add_Post.dart';
 import 'package:gsgflutterfirst/Posts/PostsScreen.dart';
+import 'package:gsgflutterfirst/Validator/MainForm.dart';
 import 'package:gsgflutterfirst/trui.dart';
 import 'package:gsgflutterfirst/trui.dart';
 import 'package:gsgflutterfirst/Validator/Form.dart';
@@ -56,6 +57,8 @@ class MyAppState extends State<MyApp> {
         'screen2':(context)=>Screen2('Screen2'),
         'screen3':(context)=>Screen3(),
         'addpost':(context)=>AddPost(),
+        'AddForm':(context)=>AddForm(),
+        'MainForm':(context)=>MainFrom(),
       },
       onGenerateRoute: (RouteSettings routesetting){
         String? name =routesetting.name;
