@@ -60,12 +60,13 @@ class AddForm extends StatelessWidget{
     children: <Widget>[
     Container(
     margin: EdgeInsets.all(20),
-    child: TextField(
+    child: TextFormField(
 
     controller: textEditingController,
     decoration: InputDecoration(
     border: OutlineInputBorder(
     borderRadius:BorderRadius.circular(10),
+
     ),
 
     enabledBorder:OutlineInputBorder(
@@ -86,7 +87,7 @@ class AddForm extends StatelessWidget{
     ),
     Container(
     margin: EdgeInsets.all(20),
-    child: TextField(
+    child: TextFormField(
     decoration: InputDecoration(
     labelText: 'Email ',
     labelStyle: TextStyle(fontSize: 14),
@@ -108,7 +109,7 @@ class AddForm extends StatelessWidget{
     ),
     Container(
     margin: EdgeInsets.all(20),
-    child: TextField(
+    child: TextFormField(
     decoration: InputDecoration(
         prefixText: "970",
     labelText: 'Phone',
