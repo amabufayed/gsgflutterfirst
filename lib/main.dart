@@ -11,7 +11,7 @@ import 'package:gsgflutterfirst/Posts/Add_Post.dart';
 import 'package:gsgflutterfirst/Posts/PostsScreen.dart';
 import 'package:gsgflutterfirst/trui.dart';
 import 'package:gsgflutterfirst/trui.dart';
-
+import 'package:gsgflutterfirst/Validator/Form.dart';
 
 void main() async{
   WidgetsFlutterBinding.ensureInitialized();
@@ -50,7 +50,7 @@ class MyAppState extends State<MyApp> {
       debugShowCheckedModeBanner: false,
       // theme: isDark ? ThemeData.dark() : ThemeData.light(),
       // home: MainScreen(),
-      home: PostsScreen(),
+      home: AddForm(),
       routes: {
         'screen1':(context)=>Screen1(),
         'screen2':(context)=>Screen2('Screen2'),

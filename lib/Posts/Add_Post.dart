@@ -4,6 +4,9 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:gsgflutterfirst/dummy_data.dart';
+import 'package:gsgflutterfirst/post.dart';
+import 'package:gsgflutterfirst/postResponse.dart';
 import 'package:image_picker/image_picker.dart';
 
 class AddPost extends StatefulWidget{
@@ -48,22 +51,56 @@ return Scaffold(
       ),
       SizedBox(height: 10,),
       Padding(padding:  EdgeInsets.all(10),
-     child: TextField(
+     child: TextFormField(
        controller: postController,
        decoration: const InputDecoration(
          border: OutlineInputBorder(),
          labelText: 'Post',
        ),
        onChanged: (text) {
-         setState(() {
-           post = text;
-           //you can access nameController in its scope to get
-           // the value of text entered as shown below
-           //fullName = nameController.text;
-         });
+        setState(() {
+         post = text;
+    //you can access nameController in its scope to get
+    // the value of text entered as shown below
+    //fullName = nameController.text;
+    });  },
+       validator: (text) {
+         if (text == null || text.isEmpty) {
+           return 'Please enter some text';
+         }  else if (text.length<8) {
+           return 'Please enter larger text';
+         }
+         return null;
        },
-     )),
+     ),
 
+
+
+     //    TextField(
+     //   controller: postController,
+     //   decoration: const InputDecoration(
+     //     border: OutlineInputBorder(),
+     //     labelText: 'Post',
+     //   ),
+     //   onChanged: (text) {
+     //     setState(() {
+     //       post = text;
+     //       //you can access nameController in its scope to get
+     //       // the value of text entered as shown below
+     //       //fullName = nameController.text;
+     //     });
+     //   },
+     // ),
+      ),
+ElevatedButton(onPressed: (){
+  if(selectedImage!=null ){
+    PostResponse post= PostResponse(selectedImage);
+    posts.add(post);
+    setState(() {});
+    Navigator.pop(context);
+  }
+
+}, child: Text("Submit"))
     ],
   ),
 ),);
