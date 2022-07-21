@@ -30,6 +30,10 @@ class _MyFormPageState extends State<MyForm> {
     DropdownMenuItem(child: Text("Eygpt"), value: "Eygpt"),
     DropdownMenuItem(child: Text("Lebanon"), value: "Lebanon")
   ];
+  List<DropdownMenuItem<String>> dummy = [
+    DropdownMenuItem(child: Text("Select"), value: "Select"),
+
+  ];
   List<DropdownMenuItem<String>> Palestine = [
     DropdownMenuItem(child: Text("Gaza"), value: "Gaza"),
     DropdownMenuItem(child: Text("Jenin"), value: "Jenin"),
@@ -55,7 +59,7 @@ class _MyFormPageState extends State<MyForm> {
       appBar: AppBar(
         // Here we take the value from the MyHomePage object that was created by
         // the App.build method, and use it to set our appbar title.
-        title: Text("Personal information"),
+        title: Text("Edit Personal information"),
       ),
       body: SingleChildScrollView(
         child: Form(
@@ -152,6 +156,7 @@ class _MyFormPageState extends State<MyForm> {
                     value: CountryselectedValue,
                     onChanged: (String? newValue) {
                       setState(() {
+                        CityselectedValue=null;
                         CountryselectedValue = newValue!;
                         if (CountryselectedValue == 'Palestine') {
                           outcities = Palestine;
@@ -188,12 +193,13 @@ class _MyFormPageState extends State<MyForm> {
                       CityselectedValue = newVal!;
                     });
                   },
-                  items: outcities,
+                  items: outcities==null?dummy:outcities,
                 ),
               ),
               Container(
                 child: Center(
                   child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text("Accept Conditions"),
                       Checkbox(
@@ -210,19 +216,21 @@ class _MyFormPageState extends State<MyForm> {
               ),
               ElevatedButton(
                 onPressed: () {
-                  if (isChecked) {
+
                     if (_formKey.currentState!.validate()) {
+                      if (isChecked) {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
                                 builder: (context) => MainFrom(name: nameEditingController.text,email: emailEditingController.text,mobile:phoneEditingController.text,country: CountryselectedValue,city:CityselectedValue),
                             ));
                     }
-                  } else {
-                    ScaffoldMessenger.of(context).showSnackBar(
-                      const SnackBar(
-                          content: Text('You must accept conditions')),
-                    );
+                      else {
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          const SnackBar(
+                              content: Text('You must accept conditions')),
+                        );
+                      }
                   }
                 },
                 child: Text("Register"),

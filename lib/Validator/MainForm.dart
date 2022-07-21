@@ -73,7 +73,7 @@ class MainFrom extends StatelessWidget {
                   style: TextStyle(
                     fontWeight: FontWeight.w500,
                     fontSize: 16,
-                  ),), Text(country!+","+city!,
+                  ),), Text(country!+" , "+city!,
                   style: const TextStyle(
                     fontWeight: FontWeight.w500,
                     fontSize: 16,
