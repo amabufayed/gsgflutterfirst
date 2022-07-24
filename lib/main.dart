@@ -9,6 +9,8 @@ import 'package:gsgflutterfirst/Navigation/Screen3.dart';
 import 'package:gsgflutterfirst/NewsApp/Screens/main_screen.dart';
 import 'package:gsgflutterfirst/Posts/Add_Post.dart';
 import 'package:gsgflutterfirst/Posts/PostsScreen.dart';
+import 'package:gsgflutterfirst/SPHelper.dart';
+import 'package:gsgflutterfirst/SharedPrefrences/SharedUI.dart';
 import 'package:gsgflutterfirst/Validator/MainForm.dart';
 import 'package:gsgflutterfirst/trui.dart';
 import 'package:gsgflutterfirst/trui.dart';
@@ -16,6 +18,8 @@ import 'package:gsgflutterfirst/Validator/Form.dart';
 
 void main() async{
   WidgetsFlutterBinding.ensureInitialized();
+  await SPHelper.initSP();
+
   await EasyLocalization.ensureInitialized();
   runApp(
       EasyLocalization(
@@ -51,7 +55,7 @@ class MyAppState extends State<MyApp> {
       debugShowCheckedModeBanner: false,
       // theme: isDark ? ThemeData.dark() : ThemeData.light(),
       // home: MainScreen(),
-      home: AddForm(),
+      home: SharedUI(),
       routes: {
         'screen1':(context)=>Screen1(),
         'screen2':(context)=>Screen2('Screen2'),
