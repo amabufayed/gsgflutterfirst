@@ -1,13 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:gsgflutterfirst/SharedPrefrences/SPHelper.dart';
 import 'package:gsgflutterfirst/Validator/MainForm.dart';
 
 class MainFrom extends StatelessWidget {
-  String ?name;
-  String ?email;
-  String ?mobile;
-  String ?country;
-  String ?city;
-  MainFrom({@required this.name,@required this.email,@required this.mobile,@required this.country,@required this.city});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,7 +23,7 @@ class MainFrom extends StatelessWidget {
                   fontWeight: FontWeight.w500,
                   fontSize: 16,
                 ),
-                ), Text(name!,
+                ), Text(SPHelper.reaFromSp('name')!,
                   style: const TextStyle(
                     fontWeight: FontWeight.w500,
                     fontSize: 16,
@@ -42,7 +38,7 @@ class MainFrom extends StatelessWidget {
                   style: TextStyle(
                     fontWeight: FontWeight.w500,
                     fontSize: 16,
-                  ),), Text(email!,
+                  ),), Text(SPHelper.reaFromSp('email')!,
                   style: const TextStyle(
                     fontWeight: FontWeight.w500,
                     fontSize: 16,
@@ -58,7 +54,7 @@ class MainFrom extends StatelessWidget {
                   style: TextStyle(
                     fontWeight: FontWeight.w500,
                     fontSize: 16,
-                  ),), Text(mobile!,
+                  ),), Text(SPHelper.reaFromSp('mobile')!,
                   style: const TextStyle(
                     fontWeight: FontWeight.w500,
                     fontSize: 16,
@@ -73,7 +69,7 @@ class MainFrom extends StatelessWidget {
                   style: TextStyle(
                     fontWeight: FontWeight.w500,
                     fontSize: 16,
-                  ),), Text(country!+" , "+city!,
+                  ),), Text(SPHelper.reaFromSp('country')!+" , "+SPHelper.reaFromSp('city')!,
                   style: const TextStyle(
                     fontWeight: FontWeight.w500,
                     fontSize: 16,

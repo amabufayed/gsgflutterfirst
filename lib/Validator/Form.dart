@@ -1,6 +1,8 @@
 
 import 'package:email_validator/email_validator.dart';
 import 'package:flutter/material.dart';
+import 'package:gsgflutterfirst/SharedPrefrences/SPHelper.dart';
+
 import 'package:gsgflutterfirst/Validator/MainForm.dart';
 
 class AddForm extends StatelessWidget {
@@ -11,6 +13,8 @@ class AddForm extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: MyForm(),
     );
+
+
   }
 }
 
@@ -21,7 +25,13 @@ class MyForm extends StatefulWidget {
 
 class _MyFormPageState extends State<MyForm> {
   final _formKey = GlobalKey<FormState>();
-
+  void saveData(  String name, String email, String mobile, String country, String city ){
+      SPHelper.writeOnSp('name',  name);
+    SPHelper.writeOnSp('email',  email);
+    SPHelper.writeOnSp('mobile',  mobile);
+    SPHelper.writeOnSp('country',  country);
+    SPHelper.writeOnSp('city',  city);
+  }
   String? CityselectedValue = null;
   String? CountryselectedValue = null;
   List<DropdownMenuItem<String>>? outcities = null;
@@ -48,6 +58,7 @@ class _MyFormPageState extends State<MyForm> {
     DropdownMenuItem(child: Text("Alexandria"), value: "Alexandria"),
   ];
   bool isChecked = false;
+
 
   TextEditingController nameEditingController = TextEditingController();
   TextEditingController emailEditingController = TextEditingController();
@@ -210,6 +221,7 @@ class _MyFormPageState extends State<MyForm> {
                           });
                         },
                       ),
+
                     ],
                   ),
                 ),
@@ -219,12 +231,16 @@ class _MyFormPageState extends State<MyForm> {
 
                     if (_formKey.currentState!.validate()) {
                       if (isChecked) {
+                        saveData(nameEditingController.text,emailEditingController.text,phoneEditingController.text, CountryselectedValue!,CityselectedValue!);
+
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => MainFrom(name: nameEditingController.text,email: emailEditingController.text,mobile:phoneEditingController.text,country: CountryselectedValue,city:CityselectedValue),
+                                builder: (context) => MainFrom(),
                             ));
-                    }
+
+
+                      }
                       else {
                         ScaffoldMessenger.of(context).showSnackBar(
                           const SnackBar(

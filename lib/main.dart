@@ -6,11 +6,13 @@ import 'package:gsgflutterfirst/Navigation/PageNotFound.dart';
 import 'package:gsgflutterfirst/Navigation/Screen1.dart';
 import 'package:gsgflutterfirst/Navigation/Screen2.dart';
 import 'package:gsgflutterfirst/Navigation/Screen3.dart';
+import 'package:gsgflutterfirst/Navigation/router.dart';
 import 'package:gsgflutterfirst/NewsApp/Screens/main_screen.dart';
 import 'package:gsgflutterfirst/Posts/Add_Post.dart';
 import 'package:gsgflutterfirst/Posts/PostsScreen.dart';
-import 'package:gsgflutterfirst/SPHelper.dart';
+import 'package:gsgflutterfirst/SharedPrefrences/SPHelper.dart';
 import 'package:gsgflutterfirst/SharedPrefrences/SharedUI.dart';
+import 'package:gsgflutterfirst/SharedPrefrences/SplachScreen.dart';
 import 'package:gsgflutterfirst/Validator/MainForm.dart';
 import 'package:gsgflutterfirst/trui.dart';
 import 'package:gsgflutterfirst/trui.dart';
@@ -49,13 +51,14 @@ class MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     // TODO: implement build
     return MaterialApp(
+      navigatorKey: AppRouter.navKey,
       localizationsDelegates: context.localizationDelegates,
       supportedLocales: context.supportedLocales,
       locale: context.locale,
       debugShowCheckedModeBanner: false,
       // theme: isDark ? ThemeData.dark() : ThemeData.light(),
       // home: MainScreen(),
-      home: SharedUI(),
+      home: SplachScreen(),
       routes: {
         'screen1':(context)=>Screen1(),
         'screen2':(context)=>Screen2('Screen2'),
